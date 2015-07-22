@@ -51,6 +51,16 @@
     <Compile Include="001-010\008.cs" />
     <Compile Include="001-010\009.cs" />
     <Compile Include="001-010\010.cs" />
+    <Compile Include="011-020\011.cs" />
+    <Compile Include="011-020\013.cs" />
+    <Compile Include="011-020\012.cs" />
+    <Compile Include="011-020\014.cs" />
+    <Compile Include="011-020\015.cs" />
+    <Compile Include="011-020\017.cs" />
+    <Compile Include="011-020\018.cs" />
+    <Compile Include="011-020\019.cs" />
+    <Compile Include="011-020\020.cs" />
+    <Compile Include="011-020\P016.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
