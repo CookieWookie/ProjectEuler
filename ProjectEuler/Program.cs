@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace ProjectEuler
@@ -9,28 +10,12 @@ namespace ProjectEuler
     {
         static void Main(string[] args)
         {
-            //P001();
-            //P002();
-            //P003();
-            //P004();
-            //P005();
-            //P006();
-            //P007();
-            //P008();
-            //P009();
-            //P010();
-
-            P011();
-            P012();
-            P013();
-            P014();
-            P015();
-            P016();
-            P017();
-            P018();
-            P019();
-            P020();
-
+            Console.Write("Enter the number of problem: ");
+            string problem = $"P{Console.ReadLine().Trim().TrimStart('0').PadLeft(3, '0')}";
+            typeof(Program)
+                .GetMethods(BindingFlags.Static | BindingFlags.NonPublic)
+                .FirstOrDefault(t => t.Name == problem)
+                .Invoke(null, null);
             Console.ReadLine();
         }
     }

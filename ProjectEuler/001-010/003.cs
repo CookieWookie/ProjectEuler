@@ -42,6 +42,10 @@ namespace ProjectEuler
         private static bool JePrvocislo(long cislo)
         {
             // na začiatku overíme, či je párne, jednoduchá a rýchla operácia, ktorá nám umožní výrazne zrýchliť chod metódy
+            if (cislo < 2)
+            {
+                return false;
+            }
             if (cislo % 2 == 0)
             {
                 return false;

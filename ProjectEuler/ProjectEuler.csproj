@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ProjectEuler</RootNamespace>
     <AssemblyName>ProjectEuler</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,10 +32,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,9 +64,66 @@
     <Compile Include="011-020\018.cs" />
     <Compile Include="011-020\019.cs" />
     <Compile Include="011-020\020.cs" />
-    <Compile Include="011-020\P016.cs" />
+    <Compile Include="011-020\016.cs" />
+    <Compile Include="021-030\021.cs" />
+    <Compile Include="021-030\022.cs" />
+    <Compile Include="021-030\023.cs" />
+    <Compile Include="021-030\024.cs" />
+    <Compile Include="021-030\025.cs" />
+    <Compile Include="021-030\026.cs" />
+    <Compile Include="021-030\027.cs" />
+    <Compile Include="021-030\028.cs" />
+    <Compile Include="021-030\029.cs" />
+    <Compile Include="021-030\030.cs" />
+    <Compile Include="031-040\032.cs" />
+    <Compile Include="031-040\033.cs" />
+    <Compile Include="031-040\034.cs" />
+    <Compile Include="031-040\035.cs" />
+    <Compile Include="031-040\036.cs" />
+    <Compile Include="031-040\037.cs" />
+    <Compile Include="031-040\038.cs" />
+    <Compile Include="031-040\039.cs" />
+    <Compile Include="031-040\040.cs" />
+    <Compile Include="031-040\031.cs" />
+    <Compile Include="041-050\041.cs" />
+    <Compile Include="041-050\042.cs" />
+    <Compile Include="041-050\043.cs" />
+    <Compile Include="041-050\044.cs" />
+    <Compile Include="041-050\045.cs" />
+    <Compile Include="041-050\046.cs" />
+    <Compile Include="041-050\047.cs" />
+    <Compile Include="041-050\048.cs" />
+    <Compile Include="041-050\049.cs" />
+    <Compile Include="041-050\050.cs" />
+    <Compile Include="051-060\051.cs" />
+    <Compile Include="051-060\052.cs" />
+    <Compile Include="051-060\053.cs" />
+    <Compile Include="051-060\054.cs" />
+    <Compile Include="051-060\055.cs" />
+    <Compile Include="051-060\056.cs" />
+    <Compile Include="051-060\057.cs" />
+    <Compile Include="051-060\058.cs" />
+    <Compile Include="051-060\059.cs" />
+    <Compile Include="051-060\060.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="021-030\022_names.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

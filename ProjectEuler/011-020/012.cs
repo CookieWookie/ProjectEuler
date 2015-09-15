@@ -9,16 +9,12 @@ namespace ProjectEuler
     {
         private static void P012()
         {
-            foreach (long num in GetTriangleNumbers())
-            {
-                var divisors = GetDivisors(num);
-                if (divisors.Count > 500)
-                {
-                    Console.Write("P012: ");
-                    Console.WriteLine(num);
-                    return;
-                }
-            }
+            long result = GetTriangleNumbers()
+                .Select(t => new { Number = t, DivisorCount = GetDivisors(t).Count })
+                .Where(t => t.DivisorCount > 500)
+                .Select(t => t.Number)
+                .FirstOrDefault();
+            Console.WriteLine($"P012: {result}");
         }
 
         private static IEnumerable<long> GetTriangleNumbers()
@@ -33,15 +29,11 @@ namespace ProjectEuler
             while (i > 0);
         }
 
-        private static ISet<long> GetDivisors(long number)
+        private static ISet<long> GetProperDivisors(long number)
         {
-            HashSet<long> set = new HashSet<long>(new[] { 1L, number });
-            if (number < 4)
-            {
-                return set;
-            }
+            HashSet<long> set = new HashSet<long>(new[] { 1L });
             long root = (long)Math.Sqrt(number);
-            for (long i = 2; i < root; i++)
+            for (long i = 2; i <= root; i++)
             {
                 if (number % i == 0)
                 {
@@ -49,6 +41,12 @@ namespace ProjectEuler
                     set.Add(number / i);
                 }
             }
+            return set;
+        }
+        private static ISet<long> GetDivisors(long number)
+        {
+            ISet<long> set = GetProperDivisors(number);
+            set.Add(number);
             return set;
         }
     }
