@@ -32,8 +32,12 @@ namespace ProjectEuler
         // vstup musí byť string, aby sme dokázali porovnávať jednotlivé znaky
         private static bool JePalindrom(string text)
         {
+            if (text.Length == 1)
+            {
+                return true;
+            }
             // nájdeme si stred reťazca, pre istotu zvýšime o 1 (ak by bola dĺžka nepárna, desatinné miesta sa vždy odseknú preč [9,54 => 9])
-            int polovica = (text.Length / 2) + 1;
+            int polovica = (text.Length / 2);
             for (int i = 0; i <= polovica; i++)
             {
                 // prvý znak

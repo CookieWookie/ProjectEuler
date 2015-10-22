@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Numerics;
 using System.Collections;
+using System.Diagnostics;
 
 namespace ProjectEuler
 {
@@ -59,6 +60,7 @@ namespace ProjectEuler
                 return new Permutation<T>(result.ToArray());
             }
         }
+        [DebuggerDisplay("Count={Length}")]
         private class Permutation<T> : IEnumerable<T>
         {
             public Permutation(T[] data)

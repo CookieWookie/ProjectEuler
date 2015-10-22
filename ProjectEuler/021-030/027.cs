@@ -29,7 +29,7 @@ namespace ProjectEuler
         {
             int count = 0;
             long n = 0;
-            while (JePrvocislo(n * n + b * n + c))
+            while (IsPrime(n * n + b * n + c))
             {
                 count++;
                 n++;
@@ -45,7 +45,7 @@ namespace ProjectEuler
                 long n = 3;
                 while (true)
                 {
-                    if (JePrvocislo(n))
+                    if (IsPrime(n))
                     {
                         yield return n;
                     }

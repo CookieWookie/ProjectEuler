@@ -16,7 +16,7 @@ namespace ProjectEuler
             for (long i = 3; i < 2000000; i += 2)
             {
                 // ak je prvočíslo, započítaj do výsledku :)
-                if (JePrvocislo(i))
+                if (IsPrime(i))
                 {
                     vysledok += i;
                 }

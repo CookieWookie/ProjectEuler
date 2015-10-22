@@ -24,12 +24,12 @@ namespace ProjectEuler
                     long d1 = i;
                     long d2 = testovaneCislo / i;
                     // ak je deliteľ 1 väčší ako doterajší výsledok a zároveň je prvočíslom, nastav ho ako výsledok
-                    if (d1 > vysledok && JePrvocislo(d1))
+                    if (d1 > vysledok && IsPrime(d1))
                     {
                         vysledok = d1;
                     }
                     // to isté pre deliteľ 2
-                    if (d2 > vysledok && JePrvocislo(d2))
+                    if (d2 > vysledok && IsPrime(d2))
                     {
                         vysledok = d2;
                     }
@@ -39,29 +39,29 @@ namespace ProjectEuler
             Console.WriteLine(vysledok);
         }
 
-        private static bool JePrvocislo(long cislo)
+        private static bool IsPrime(long num)
         {
-            // na začiatku overíme, či je párne, jednoduchá a rýchla operácia, ktorá nám umožní výrazne zrýchliť chod metódy
-            if (cislo < 2)
+            if (num == 2 || num == 3)
+            {
+                return true;
+            }
+            if (num < 2)
             {
                 return false;
             }
-            if (cislo % 2 == 0)
+            if (num % 2 == 0 || num % 3 == 0)
             {
                 return false;
             }
-            // získaj odmocninu čísla
-            long sqRoot = (long)Math.Sqrt(cislo);
-            // začíname 3, a pretože párnosť sme overili, navyšujeme zakaždým o 2
-            // ďalšie masívne zrýchlenie dosiahneme tým, že overujeme hodnoty len do odmocniny testovaného čísla
-            // tie vyššie sú už v tom momente otestované 
-            for (int i = 3; i <= sqRoot; i += 2)
+            long i = 5;
+            long sqrt = (long)Math.Ceiling(Math.Sqrt(num));
+            while (i <= sqrt)
             {
-                // ak je číslo deliteľné aktuálnou hodnotou bezo zvyšku, nie je prvočíslo
-                if (cislo % i == 0)
+                if (num % i == 0 || num % (i + 2) == 0)
                 {
                     return false;
                 }
+                i += 6;
             }
             return true;
         }

@@ -20,7 +20,7 @@ namespace ProjectEuler
             while (pocetPrvocisel < 10001)
             {
                 // ak je prvočíslo, zvýš počítadlo a zapíš do výsledku
-                if (JePrvocislo(cislo))
+                if (IsPrime(cislo))
                 {
                     vysledok = cislo;
                     pocetPrvocisel++;
